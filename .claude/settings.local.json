@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cp \"hero photo.jpeg\" photos/hero.jpeg)",
+      "Bash(cp \"portrait.jpeg\" photos/portrait.jpeg)",
+      "Bash(cp \"IMG_7559.jpeg\" photos/bloomberg.jpeg)",
+      "Bash(cp \"IMG_0561.jpeg\" photos/eden.jpeg)",
+      "Bash(cp \"IMG_4444.jpeg\" photos/speaking.jpeg)",
+      "Bash(cp \"180 consultant.jpeg\" photos/logo-180dc.jpeg)",
+      "Bash(cp \"pinnacle projec t.jpeg\" photos/logo-pinnacle.jpeg)",
+      "Bash(cp \"pivot labs.jpeg\" photos/logo-pivot.jpeg)",
+      "Bash(cp \"wealth_advisory_club_logo.jpeg\" photos/logo-wac.jpeg)",
+      "Bash(cp \"tech factory.jpeg\" photos/logo-techfactory.jpeg)",
+      "Bash(cp \"junior_achievement_usa_logo.jpeg\" photos/logo-ja.jpeg)",
+      "Bash(cp \"kumon_logo.jpeg\" photos/logo-kumon.jpeg)",
+      "Bash(cp \"tnc_yorku_logo.jpeg\" photos/logo-tnc.jpeg)",
+      "Bash(ls \"/Users/meesam/Desktop/Meesam portfolio/\"*.jpeg)",
+      "Bash(cp \"20240314_115214 3.jpeg\" photos/ja-tradeshow.jpeg)",
+      "Bash(cp \"20240314_122655 2.jpeg\" photos/tradeshow-hall.jpeg)",
+      "Bash(cp \"20240314_125518 5.jpeg\" photos/ja-team.jpeg)",
+      "Bash(cp \"298585ed-0db2-4786-bd58-b6ceec8bf00e.jpeg\" photos/group-outdoor.jpeg)",
+      "Bash(cp \"4F298291-ECC4-4EED-91A2-3B86844C2761.jpeg\" photos/networking.jpeg)",
+      "Bash(cp \"Accounting society.jpeg\" photos/accounting-society.jpeg)",
+      "Bash(cp \"DECA.jpeg\" photos/deca-ribbon.jpeg)",
+      "Bash(cp \"stock market .jpeg\" photos/stock-cert.jpeg)",
+      "Bash(cp \"york ace.jpeg\" photos/york-ace.jpeg)",
+      "Bash(cp \"Networking club.jpeg\" photos/networking-club.jpeg)"
+    ]
+  }
+}
