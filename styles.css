@@ -286,6 +286,8 @@ img.strip-ph,.strip-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-pos
   .v-card{grid-template-columns:1fr}
   .contact-split{grid-template-columns:1fr;gap:40px}
   .hero-fullname{font-size:clamp(2.4rem,5.5vw,4.5rem)}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-last-row .exp-card{flex:0 0 calc(50% - 9px)}
 }
 @media(max-width:768px){
   .tb-center{display:none}
@@ -295,6 +297,11 @@ img.strip-ph,.strip-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-pos
   .hero-marquee-track img{height:280px;width:210px}
   .photo-strip{grid-template-columns:repeat(2,1fr)}
   .exp-grid{grid-template-columns:1fr}
+  .exp-last-row{flex-direction:column}.exp-last-row .exp-card{flex:1 1 100%}
+  .about-grid{display:flex;flex-direction:column}
+  .about-text-col{order:-1}
+  .about-photos-col{order:1;max-width:100%}
+  .about-main-ph{max-height:350px;width:100%;object-fit:cover}
   .achv-grid{grid-template-columns:repeat(2,1fr)}
   .section{padding:80px 0}.container{padding:0 20px}
   .v-row{grid-template-columns:1fr}
