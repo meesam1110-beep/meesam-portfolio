@@ -13,7 +13,7 @@
   window.addEventListener('load',()=>{
     document.querySelectorAll('.anim-up,.anim-fade').forEach(el=>{
       const d=parseInt(el.dataset.delay||'0',10);
-      setTimeout(()=>el.classList.add('in'),d+300);
+      setTimeout(()=>el.classList.add('in'),d+50);
     });
   });
 
