@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    #loader{position:fixed;inset:0;z-index:9999;background:var(--bg,#f5f3ef);display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease}
+    #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .loader-inner{display:flex;flex-direction:column;align-items:center;gap:16px}
+    .loader-phrase{font-family:'Inter',sans-serif;font-size:clamp(0.85rem,1.5vw,1rem);letter-spacing:0.12em;text-transform:uppercase;color:var(--tx,#1a1a1a);opacity:0.5;transition:opacity 0.3s ease}
+    .loader-count{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,6rem);font-weight:700;color:var(--ac,#9b7a3c);line-height:1}
     [data-theme="dark"] #themeToggle{border:1.5px solid rgba(255,255,255,0.5)!important;background:rgba(255,255,255,0.08)!important}
     [data-theme="dark"] .t-sun,[data-theme="dark"] .t-moon{color:#fff!important}
   </style>
@@ -17,6 +22,19 @@
   <div class="grain"></div>
 
   <!-- Top Bar -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-phrase">Building profile...</div>
+      <div class="loader-count" id="loaderCount">0%</div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var c=document.getElementById('loaderCount');
+    var n=0;
+    var ci=setInterval(function(){n+=2;if(c)c.textContent=n+'%';if(n>=100){clearInterval(ci);document.getElementById('loader').classList.add('hidden')}},10);
+  })();
+  </script>
   <header class="topbar" id="topbar">
     <a href="#hero" class="tb-logo" style="font-size:1.6rem">٣١٣</a>
     <div class="tb-center">
