@@ -24,9 +24,9 @@ em{font-family:var(--serif);font-style:italic}
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 
 /* Animations */
-.anim-up{opacity:0;transform:translateY(60px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.anim-up{opacity:0;transform:translateY(60px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .anim-up.in{opacity:1;transform:translateY(0)}
-.anim-fade{opacity:0;transition:opacity 1s var(--ease)}
+.anim-fade{opacity:0;transition:opacity .4s var(--ease)}
 .anim-fade.in{opacity:1}
 .reveal-up{opacity:0;transform:translateY(44px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal-up.vis{opacity:1;transform:translateY(0)}
