@@ -251,9 +251,9 @@ img.strip-ph,.strip-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-pos
    MARQUEE
    ============================================ */
 .marquee{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:14px 0;overflow:hidden;background:var(--bg2)}
-.marquee-track{display:flex;width:max-content;animation:mq 12s linear infinite}
-.marquee-track span{font-family:var(--mono);font-size:1rem;font-weight:600;color:var(--tx2);letter-spacing:.2em;white-space:nowrap;padding:0 24px}
-@keyframes mq{to{transform:translateX(-50%)}}
+.marquee-track{display:flex;width:max-content;animation:mq 25s linear infinite;will-change:transform}
+.marquee-track span{font-family:var(--mono);font-size:.85rem;font-weight:700;color:var(--tx2);letter-spacing:.25em;white-space:nowrap;padding:0 40px}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
 
 /* ============================================
    CONTACT
