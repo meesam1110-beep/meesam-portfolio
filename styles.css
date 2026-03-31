@@ -309,7 +309,8 @@ img.strip-ph,.strip-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-pos
   .photo-strip{grid-template-columns:1fr}
   .contact-split{grid-template-columns:1fr;gap:32px}
   .footer-row{flex-direction:column;gap:6px;text-align:center}
-  .about-metrics{grid-template-columns:repeat(3,1fr);gap:20px}
+  .about-metrics{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+  .about-metrics .metric{flex:0 0 30%;text-align:center}
   .cert-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
