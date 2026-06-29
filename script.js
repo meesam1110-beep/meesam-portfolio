@@ -9,6 +9,21 @@
     html.setAttribute('data-theme',n);localStorage.setItem('theme',n);
   });
 
+  // Shuffle hero marquee on each refresh while keeping the loop seamless.
+  const heroTrack=document.querySelector('[data-photo-collection="hero-marquee"]');
+  if(heroTrack){
+    const sources=Array.from(heroTrack.querySelectorAll('img'))
+      .map(img=>img.getAttribute('src'))
+      .filter(Boolean);
+    const uniqueSources=getMarqueeSequence(sources);
+    if(uniqueSources.length>1){
+      shuffle(uniqueSources);
+      heroTrack.innerHTML=[...uniqueSources,...uniqueSources]
+        .map(src=>`<img src="${src}" alt="">`)
+        .join('');
+    }
+  }
+
   // Hero entrance
   window.addEventListener('load',()=>{
     document.querySelectorAll('.anim-up,.anim-fade').forEach(el=>{
@@ -74,5 +89,23 @@
     });
     c.addEventListener('mouseleave',()=>c.style.transform='');
   });
+
+  function getMarqueeSequence(list){
+    if(list.length%2===0){
+      const half=list.length/2;
+      const first=list.slice(0,half);
+      const second=list.slice(half);
+      if(first.every((src,index)=>src===second[index]))return first;
+    }
+    return list.slice();
+  }
+
+  function shuffle(list){
+    for(let i=list.length-1;i>0;i-=1){
+      const j=Math.floor(Math.random()*(i+1));
+      [list[i],list[j]]=[list[j],list[i]];
+    }
+    return list;
+  }
 
 })();
