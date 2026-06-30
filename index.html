@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meesam Ali Merchant</title>
+  <script>document.documentElement.classList.add('has-js');</script>
   <meta property="og:title" content="Meesam Ali Merchant">
   <meta property="og:description" content="BBA candidate at Schulich School of Business. Consulting, finance, and venture building.">
   <meta property="og:image" content="https://meesam.ca/photos/bloomberg.jpeg">
@@ -23,7 +24,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"></noscript>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/svg+xml" href="brand-mark.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -33,11 +35,84 @@
   </style>
 </head>
 <body>
+  <div class="site-loader" id="siteLoader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-mark">
+        <svg class="loader-logo brand-svg" viewBox="0 0 64 64" role="img" aria-label="Meesam logo">
+          <defs>
+            <clipPath id="loaderFrameClip">
+              <rect x="8" y="8" width="48" height="48" rx="16"></rect>
+            </clipPath>
+            <clipPath id="loaderMountainClip">
+              <path d="M8.24 47L20.12 22.16L30.92 38.36L41.72 22.16L55.76 47H44.96L37.4 29.72L30.92 47H8.24Z"></path>
+              <path d="M20.12 22.16L23.36 12.44L30.92 38.36Z"></path>
+              <path d="M30.92 38.36L41.72 9.2L55.76 47L41.72 22.16Z"></path>
+            </clipPath>
+          </defs>
+          <rect class="brand-frame" x="8" y="8" width="48" height="48" rx="16"></rect>
+          <path class="brand-m-base" d="M8.24 47L20.12 22.16L30.92 38.36L41.72 22.16L55.76 47H44.96L37.4 29.72L30.92 47H8.24Z"></path>
+          <path class="brand-peak brand-peak-left" d="M20.12 22.16L23.36 12.44L30.92 38.36Z"></path>
+          <path class="brand-peak brand-peak-right" d="M30.92 38.36L41.72 9.2L55.76 47L41.72 22.16Z"></path>
+          <g class="loader-falling-snow" clip-path="url(#loaderFrameClip)" aria-hidden="true">
+            <path class="flake-star" d="M14 -8V-3M11.5 -5.5H16.5M12.2 -7.3L15.8 -3.7M15.8 -7.3L12.2 -3.7" style="--delay:.66s;--dur:1.48s;--drift:3px;--spin:54deg"></path>
+            <circle class="flake-dot" cx="19" cy="-14" r=".95" style="--delay:.72s;--dur:1.34s;--drift:-2px;--spin:-24deg"></circle>
+            <path class="flake-star" d="M25 -11V-6M22.5 -8.5H27.5M23.2 -10.3L26.8 -6.7M26.8 -10.3L23.2 -6.7" style="--delay:.78s;--dur:1.56s;--drift:-3px;--spin:-62deg"></path>
+            <circle class="flake-dot" cx="31" cy="-17" r=".8" style="--delay:.84s;--dur:1.38s;--drift:2px;--spin:32deg"></circle>
+            <path class="flake-star" d="M37 -9V-4M34.5 -6.5H39.5M35.2 -8.3L38.8 -4.7M38.8 -8.3L35.2 -4.7" style="--delay:.9s;--dur:1.52s;--drift:3px;--spin:72deg"></path>
+            <circle class="flake-dot" cx="45" cy="-13" r="1.05" style="--delay:.96s;--dur:1.32s;--drift:-2px;--spin:-40deg"></circle>
+            <path class="flake-star" d="M51 -10V-5M48.5 -7.5H53.5M49.2 -9.3L52.8 -5.7M52.8 -9.3L49.2 -5.7" style="--delay:1.02s;--dur:1.5s;--drift:-3px;--spin:80deg"></path>
+            <circle class="flake-dot" cx="16" cy="-22" r=".8" style="--delay:1.08s;--dur:1.34s;--drift:2px;--spin:18deg"></circle>
+            <path class="flake-star" d="M22 -22V-17M19.5 -19.5H24.5M20.2 -21.3L23.8 -17.7M23.8 -21.3L20.2 -17.7" style="--delay:1.14s;--dur:1.6s;--drift:2px;--spin:-76deg"></path>
+            <circle class="flake-dot" cx="28" cy="-26" r=".95" style="--delay:1.2s;--dur:1.36s;--drift:3px;--spin:35deg"></circle>
+            <path class="flake-star" d="M34 -24V-19M31.5 -21.5H36.5M32.2 -23.3L35.8 -19.7M35.8 -23.3L32.2 -19.7" style="--delay:1.26s;--dur:1.62s;--drift:-3px;--spin:88deg"></path>
+            <circle class="flake-dot" cx="40" cy="-27" r=".85" style="--delay:1.32s;--dur:1.4s;--drift:-1px;--spin:-20deg"></circle>
+            <path class="flake-star" d="M47 -23V-18M44.5 -20.5H49.5M45.2 -22.3L48.8 -18.7M48.8 -22.3L45.2 -18.7" style="--delay:1.38s;--dur:1.58s;--drift:-2px;--spin:65deg"></path>
+            <circle class="flake-dot" cx="52" cy="-28" r="1" style="--delay:1.44s;--dur:1.34s;--drift:2px;--spin:-28deg"></circle>
+            <path class="flake-star" d="M18 -34V-29M15.5 -31.5H20.5M16.2 -33.3L19.8 -29.7M19.8 -33.3L16.2 -29.7" style="--delay:1.5s;--dur:1.54s;--drift:3px;--spin:92deg"></path>
+            <circle class="flake-dot" cx="24" cy="-36" r=".75" style="--delay:1.56s;--dur:1.3s;--drift:-2px;--spin:-18deg"></circle>
+            <path class="flake-star" d="M30 -35V-30M27.5 -32.5H32.5M28.2 -34.3L31.8 -30.7M31.8 -34.3L28.2 -30.7" style="--delay:1.62s;--dur:1.56s;--drift:2px;--spin:-86deg"></path>
+            <circle class="flake-dot" cx="36" cy="-38" r=".9" style="--delay:1.68s;--dur:1.34s;--drift:3px;--spin:40deg"></circle>
+            <path class="flake-star" d="M42 -34V-29M39.5 -31.5H44.5M40.2 -33.3L43.8 -29.7M43.8 -33.3L40.2 -29.7" style="--delay:1.74s;--dur:1.52s;--drift:-3px;--spin:74deg"></path>
+            <circle class="flake-dot" cx="49" cy="-37" r=".85" style="--delay:1.8s;--dur:1.28s;--drift:-2px;--spin:-32deg"></circle>
+            <circle class="flake-dot" cx="13" cy="-44" r=".85" style="--delay:.78s;--dur:1.28s;--drift:2px;--spin:20deg"></circle>
+            <path class="flake-star" d="M21 -45V-40M18.5 -42.5H23.5M19.2 -44.3L22.8 -40.7M22.8 -44.3L19.2 -40.7" style="--delay:.9s;--dur:1.5s;--drift:-3px;--spin:-72deg"></path>
+            <circle class="flake-dot" cx="29" cy="-48" r=".8" style="--delay:1.02s;--dur:1.26s;--drift:2px;--spin:36deg"></circle>
+            <path class="flake-star" d="M37 -46V-41M34.5 -43.5H39.5M35.2 -45.3L38.8 -41.7M38.8 -45.3L35.2 -41.7" style="--delay:1.14s;--dur:1.48s;--drift:3px;--spin:96deg"></path>
+            <circle class="flake-dot" cx="45" cy="-50" r=".95" style="--delay:1.26s;--dur:1.3s;--drift:-2px;--spin:-30deg"></circle>
+            <path class="flake-star" d="M53 -44V-39M50.5 -41.5H55.5M51.2 -43.3L54.8 -39.7M54.8 -43.3L51.2 -39.7" style="--delay:1.38s;--dur:1.44s;--drift:-3px;--spin:58deg"></path>
+            <circle class="flake-dot" cx="18" cy="-55" r=".75" style="--delay:1.5s;--dur:1.24s;--drift:3px;--spin:-16deg"></circle>
+            <path class="flake-star" d="M26 -54V-49M23.5 -51.5H28.5M24.2 -53.3L27.8 -49.7M27.8 -53.3L24.2 -49.7" style="--delay:1.62s;--dur:1.46s;--drift:-2px;--spin:-92deg"></path>
+            <circle class="flake-dot" cx="34" cy="-57" r=".9" style="--delay:1.74s;--dur:1.28s;--drift:2px;--spin:48deg"></circle>
+            <path class="flake-star" d="M42 -55V-50M39.5 -52.5H44.5M40.2 -54.3L43.8 -50.7M43.8 -54.3L40.2 -50.7" style="--delay:1.86s;--dur:1.42s;--drift:3px;--spin:78deg"></path>
+            <circle class="flake-dot" cx="50" cy="-59" r=".8" style="--delay:1.98s;--dur:1.22s;--drift:-3px;--spin:-42deg"></circle>
+            <path class="flake-star" d="M16 -61V-56M13.5 -58.5H18.5M14.2 -60.3L17.8 -56.7M17.8 -60.3L14.2 -56.7" style="--delay:2.1s;--dur:1.38s;--drift:2px;--spin:68deg"></path>
+          </g>
+          <g class="loader-cracks" aria-hidden="true">
+            <path class="crack-main crack-left-a" d="M7.1 22.8L2.4 19.7L-4.8 24.1L.2 31.4L-6.1 36.8L-1.9 45.6"></path>
+            <path class="crack-main crack-left-b" d="M6.5 43.8L-1.7 48.1L-5.6 40.2L1.8 35.8"></path>
+            <path class="crack-main crack-right-a" d="M56.8 31.2L64.7 27.9L69.8 34.7L63.1 39.1L67.9 46.3"></path>
+            <path class="crack-main crack-right-b" d="M57.4 20.9L62.2 15.8L67.6 19.4L65.1 25.2"></path>
+            <path class="crack-branch crack-left-branch" d="M2.4 19.7L.4 12.6L5.3 9.4"></path>
+            <path class="crack-branch crack-left-low" d="M-1.7 48.1L-5.2 55.7L.8 60.4"></path>
+            <path class="crack-branch crack-right-branch" d="M64.7 27.9L70.8 25.6L74.4 30.2"></path>
+          </g>
+          <g class="brand-snow-caps" clip-path="url(#loaderMountainClip)">
+            <path class="brand-snow brand-snow-left" d="M23.36 17.84L28.76 29.72L26.6 25.4L21.2 37.28L23.36 32.96L19.04 36.2L20.12 27.56L13.64 31.88Z"></path>
+            <path class="brand-snow brand-snow-right" d="M41.72 14.6L48.2 30.8L47.12 25.4L51.44 38.36L46.04 34.04L40.64 42.68L38.48 28.64L33.08 32.96Z"></path>
+          </g>
+        </svg>
+        <div class="loader-impact" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
   <div class="grain"></div>
 
   <!-- Top Bar -->
   <header class="topbar" id="topbar">
-    <a href="#hero" class="tb-logo" style="font-size:1.6rem">٣١٣</a>
+    <a href="#hero" class="tb-logo" aria-label="Back to top">
+      <img class="tb-mark" src="brand-mark.svg" alt="">
+      <span>٣١٣</span>
+    </a>
     <div class="tb-center">
       <a href="#about">About</a>
       <a href="#work">Experience</a>

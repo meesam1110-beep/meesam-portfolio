@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="mountainClip">
+      <path d="M8.24 47L20.12 22.16L30.92 38.36L41.72 22.16L55.76 47H44.96L37.4 29.72L30.92 47H8.24Z"/>
+      <path d="M20.12 22.16L23.36 12.44L30.92 38.36Z"/>
+      <path d="M30.92 38.36L41.72 9.2L55.76 47L41.72 22.16Z"/>
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#000000"/>
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="none" stroke="#c9a96e" stroke-width="3"/>
+  <path d="M8.24 47L20.12 22.16L30.92 38.36L41.72 22.16L55.76 47H44.96L37.4 29.72L30.92 47H8.24Z" fill="#dfc28e"/>
+  <path d="M20.12 22.16L23.36 12.44L30.92 38.36Z" fill="#dfc28e"/>
+  <path d="M30.92 38.36L41.72 9.2L55.76 47L41.72 22.16Z" fill="#dfc28e"/>
+  <g clip-path="url(#mountainClip)">
+    <path d="M23.36 17.84L28.76 29.72L26.6 25.4L21.2 37.28L23.36 32.96L19.04 36.2L20.12 27.56L13.64 31.88Z" fill="#ffffff"/>
+    <path d="M41.72 14.6L48.2 30.8L47.12 25.4L51.44 38.36L46.04 34.04L40.64 42.68L38.48 28.64L33.08 32.96Z" fill="#ffffff"/>
+  </g>
+</svg>

@@ -9,6 +9,20 @@
     html.setAttribute('data-theme',n);localStorage.setItem('theme',n);
   });
 
+  // Simple loader: quick brand reveal, then release the page.
+  const loaderStart=performance.now();
+  const hideLoader=()=>{
+    const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const minTime=prefersReduced?0:2850;
+    const wait=Math.max(0,minTime-(performance.now()-loaderStart));
+    setTimeout(()=>{
+      html.classList.add('is-loaded');
+      setTimeout(()=>document.getElementById('siteLoader')?.remove(),520);
+    },wait);
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hideLoader,{once:true});
+  else hideLoader();
+
   // Shuffle hero marquee on each refresh while keeping the loop seamless.
   const heroTrack=document.querySelector('[data-photo-collection="hero-marquee"]');
   if(heroTrack){
