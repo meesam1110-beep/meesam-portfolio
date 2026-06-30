@@ -9,16 +9,21 @@
     html.setAttribute('data-theme',n);localStorage.setItem('theme',n);
   });
 
-  // Simple loader: quick brand reveal, then release the page.
+  // Loader: quick brand reveal, then release once the visible hero photos are ready.
   const loaderStart=performance.now();
+  let heroReady=Promise.resolve();
   const hideLoader=()=>{
     const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const minTime=prefersReduced?0:2850;
-    const wait=Math.max(0,minTime-(performance.now()-loaderStart));
-    setTimeout(()=>{
+    const minTime=prefersReduced?0:2350;
+    const maxHeroWait=prefersReduced?0:3400;
+    const minWait=Math.max(0,minTime-(performance.now()-loaderStart));
+    Promise.allSettled([
+      sleep(minWait),
+      Promise.race([heroReady,sleep(maxHeroWait)])
+    ]).then(()=>{
       html.classList.add('is-loaded');
       setTimeout(()=>document.getElementById('siteLoader')?.remove(),520);
-    },wait);
+    });
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hideLoader,{once:true});
   else hideLoader();
@@ -33,8 +38,9 @@
     if(uniqueSources.length>1){
       shuffle(uniqueSources);
       heroTrack.innerHTML=[...uniqueSources,...uniqueSources]
-        .map(src=>`<img src="${src}" alt="">`)
+        .map((src,index)=>`<img src="${src}" alt="" loading="${index<6?'eager':'lazy'}" decoding="async"${index<6?' fetchpriority="high"':''}>`)
         .join('');
+      heroReady=waitForHeroImages(heroTrack,6);
     }
   }
 
@@ -113,6 +119,24 @@
     }
     return list.slice();
   }
+
+  function waitForHeroImages(track,count){
+    const imgs=Array.from(track.querySelectorAll('img')).slice(0,count);
+    if(!imgs.length)return Promise.resolve();
+    return Promise.all(imgs.map(imageReady));
+  }
+
+  function imageReady(img){
+    if(img.complete&&img.naturalWidth>0)return img.decode?img.decode().catch(()=>{}):Promise.resolve();
+    return new Promise(resolve=>{
+      const done=()=>resolve();
+      img.addEventListener('load',done,{once:true});
+      img.addEventListener('error',done,{once:true});
+      if(img.decode)img.decode().then(done).catch(done);
+    });
+  }
+
+  function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
 
   function shuffle(list){
     for(let i=list.length-1;i>0;i-=1){
