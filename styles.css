@@ -176,9 +176,9 @@ em{font-family:var(--serif);font-style:italic}
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--bd);padding:12px 32px;
 }
-.tb-logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.6rem;letter-spacing:.06em;color:var(--ac)}
-.tb-mark{width:34px;height:34px;border-radius:10px;display:block;filter:drop-shadow(0 6px 14px rgba(201,169,110,.18))}
-.topbar.scrolled .tb-mark{width:31px;height:31px;border-radius:9px}
+.tb-logo{display:inline-flex;align-items:center;gap:10px;height:38px;font-weight:800;font-size:1.6rem;letter-spacing:.06em;color:var(--ac);overflow:hidden}
+.tb-mark{width:34px;height:34px;max-width:34px;max-height:34px;flex:0 0 34px;border-radius:10px;display:block;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(201,169,110,.18))}
+.topbar.scrolled .tb-mark{width:31px;height:31px;max-width:31px;max-height:31px;flex-basis:31px;border-radius:9px}
 .tb-center{display:flex;gap:32px}
 .tb-center a{font-size:.82rem;font-weight:500;color:var(--tx3);transition:color .3s}
 .tb-center a:hover{color:var(--tx)}
@@ -426,7 +426,7 @@ img.strip-ph,.strip-ph{width:100%;aspect-ratio:16/10;object-fit:cover;object-pos
 @media(max-width:768px){
   .tb-center{display:none}
   .tb-logo{gap:8px;font-size:1.45rem}
-  .tb-mark{width:30px;height:30px;border-radius:8px}
+  .tb-mark{width:30px;height:30px;max-width:30px;max-height:30px;flex-basis:30px;border-radius:8px}
   .hero-fullname{font-size:clamp(2rem,10vw,3.2rem)}
   .hero-center{margin-top:12vh}
   .hero-marquee{height:45%}
