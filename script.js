@@ -9,6 +9,8 @@
     html.setAttribute('data-theme',n);localStorage.setItem('theme',n);
   });
 
+  hydrateVisitorBadge();
+
   // Loader: quick brand reveal, then release once the visible hero photos are ready.
   const loaderStart=performance.now();
   let heroReady=Promise.resolve();
@@ -124,6 +126,55 @@
     const imgs=Array.from(track.querySelectorAll('img')).slice(0,count);
     if(!imgs.length)return Promise.resolve();
     return Promise.all(imgs.map(imageReady));
+  }
+
+  async function hydrateVisitorBadge(){
+    const badge=document.querySelector('[data-analytics-badge]');
+    const countEl=document.querySelector('[data-analytics-count]');
+    const labelEl=document.querySelector('[data-analytics-label]');
+    if(!badge||!countEl||!labelEl)return;
+
+    try{
+      const res=await fetch(`analytics.json?v=${Date.now()}`,{
+        cache:'no-store',
+        headers:{'Accept':'application/json'}
+      });
+      if(!res.ok)throw new Error(`Analytics fetch failed: ${res.status}`);
+
+      const data=await res.json();
+      const status=(data?.status||'').toString().toLowerCase();
+      const count=Number(data?.count);
+      const label=(data?.label||'views this year').toString();
+
+      if(!['live','manual'].includes(status)){
+        badge.classList.add('is-pending');
+        countEl.textContent='Daily';
+        labelEl.textContent='Google Analytics sync';
+        badge.title='Google Analytics refresh runs once a day.';
+        badge.setAttribute('aria-label','Google Analytics syncs daily');
+        return;
+      }
+
+      if(!Number.isFinite(count)||count<=0)return;
+
+      badge.classList.remove('is-pending');
+      countEl.textContent=count.toLocaleString('en-CA');
+      labelEl.textContent=label;
+
+      if(status==='manual'){
+        badge.title='Manual placeholder until live analytics sync is connected.';
+      }
+      if(data?.updatedAt){
+        const updated=new Date(data.updatedAt);
+        if(!Number.isNaN(updated.getTime())){
+          const stamp=updated.toLocaleDateString('en-CA',{month:'short',day:'numeric',year:'numeric'});
+          badge.title=`Updated ${stamp}`;
+        }
+      }
+      badge.setAttribute('aria-label',`${count.toLocaleString('en-CA')} ${label}`);
+    }catch(err){
+      console.warn('Visitor badge sync unavailable.',err);
+    }
   }
 
   function imageReady(img){
