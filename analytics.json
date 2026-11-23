@@ -1,7 +1,7 @@
 {
-  "count": 3427,
-  "label": "views this year",
-  "updatedAt": "2026-07-02T15:00:00.000Z",
-  "source": "Manual placeholder",
-  "status": "manual"
+  "count": 0,
+  "label": "all time visitors",
+  "updatedAt": null,
+  "source": "Google Analytics",
+  "status": "pending"
 }

@@ -9,6 +9,8 @@
     html.setAttribute('data-theme',n);localStorage.setItem('theme',n);
   });
 
+  hydrateVisitorBadge();
+
   // Loader: quick brand reveal, then release once the visible hero photos are ready.
   const loaderStart=performance.now();
   let heroReady=Promise.resolve();
@@ -146,4 +148,31 @@
     return list;
   }
 
+async function hydrateVisitorBadge(){
+    const badge=document.querySelector('[data-analytics-badge]');
+    const countEl=document.querySelector('[data-analytics-count]');
+    const labelEl=document.querySelector('[data-analytics-label]');
+    if(!badge||!countEl||!labelEl)return;
+    try{
+      const res=await fetch(`analytics.json?v=${Date.now()}`,{cache:'no-store',headers:{'Accept':'application/json'}});
+      if(!res.ok)throw new Error(`Analytics fetch failed: ${res.status}`);
+      const data=await res.json();
+      const count=Number(data?.count);
+      const label=(data?.label||'all time visitors').toString();
+      if(!Number.isFinite(count)||count<=0)return;
+      countEl.textContent=count.toLocaleString('en-CA');
+      badge.style.display='inline-flex';
+      labelEl.textContent=label;
+      if(data?.updatedAt){
+        const updated=new Date(data.updatedAt);
+        if(!Number.isNaN(updated.getTime())){
+          const stamp=updated.toLocaleDateString('en-CA',{month:'short',day:'numeric',year:'numeric'});
+          badge.title=`Updated ${stamp}`;
+        }
+      }
+      badge.setAttribute('aria-label',`${count.toLocaleString('en-CA')} ${label}`);
+    }catch(err){
+      badge.style.display='none';
+    }
+  }
 })();
